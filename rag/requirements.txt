@@ -1,0 +1,81 @@
+# ============================================================================
+# Python dependencies for MongoDB-native RAG production system
+# Install: pip install -r requirements.txt
+# ============================================================================
+
+# ============================================================================
+# CORE DEPENDENCIES
+# ============================================================================
+
+# MongoDB driver
+pymongo>=4.6.0
+
+# ChromaDB vector database (embedded mode - no separate server needed)
+chromadb>=0.4.14
+
+# HTTP client for LLM APIs
+requests>=2.31.0
+
+# ============================================================================
+# EMBEDDING SERVICE
+# ============================================================================
+
+# Sentence transformers for embeddings (all-MiniLM-L6-v2)
+sentence-transformers>=2.5.0
+
+# PyTorch (sentence-transformers dependency)
+torch>=2.0.0
+
+# Flask for embedding microservice endpoint
+flask==2.3.3
+
+# ============================================================================
+# LLM INTEGRATION (PRIMARY: Ollama)
+# ============================================================================
+
+# No specific Ollama client needed - uses REST API via requests
+# Ollama runs locally, model: llama3.2
+
+# ============================================================================
+# LLM INTEGRATION (SECONDARY: Groq - COMMENTED OUT)
+# ============================================================================
+
+# Uncomment if using Groq API instead of Ollama
+# groq>=0.4.0
+
+# Note: Groq has 32KB payload limit
+# Use Ollama for large context, Groq for speed
+
+# ============================================================================
+# UTILITIES
+# ============================================================================
+
+# Numeric operations
+numpy>=1.24.0
+
+# Type hints (Python 3.8+ compatibility)
+typing-extensions>=4.8.0
+
+# ============================================================================
+# OPTIONAL: Advanced NLP
+# ============================================================================
+
+# LangChain (optional - not used in core system but available)
+# Uncomment if needed for advanced document processing
+# langchain>=0.1.0
+# langchain-community>=0.0.20
+
+# Hugging Face Hub (auto-installed with sentence-transformers)
+huggingface_hub>=0.20.0
+transformers>=4.30.0
+
+# ============================================================================
+# DEVELOPMENT DEPENDENCIES (optional)
+# ============================================================================
+
+# Uncomment for development/testing
+# pytest>=7.4.0
+# pytest-asyncio>=0.21.0
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.5.0
